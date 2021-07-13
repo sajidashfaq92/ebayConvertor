@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ebay Template URLs convertor</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.3.2.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <style>
+      html, body {
+      min-height: 100%;
+      }
+      body, div, section, input, select, p { 
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 14px;
+      color: #666;
+      }
+      h1 {
+      margin: 0;
+      font-weight: 400;
+      }
+      h3 {
+      margin: 12px 0;
+      color: #8ebf42;
+      }
+      .main-block {
+      /* display: flex; */
+      justify-content: center;
+      /* align-items: center; */
+      background: #fff;
+      }
+      section {
+      width: 100%;
+      padding: 20px;
+      }
+      fieldset {
+      border: none;
+      border-top: 1px solid #8ebf42;
+      }
+      .account-details, .personal-details {
+      /* display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between; */
+      }
+      .account-details >div, .personal-details >div >div {
+      /* display: flex; */
+      /* align-items: center; */
+      margin-bottom: 10px;
+      }
+      .account-details >div, .personal-details >div, input, label {
+      width: 100%;
+      }
+      label {
+      padding: 0 5px;
+      text-align: right;
+      vertical-align: middle;
+      }
+      input {
+      padding: 5px;
+      vertical-align: middle;
+      }
+      .checkbox {
+      margin-bottom: 10px;
+      }
+      select, .children, .gender, .bdate-block {
+      width: calc(100% + 26px);
+      padding: 5px 0;
+      }
+      select {
+      background: transparent;
+      }
+      .gender input {
+      width: auto;
+      } 
+      .gender label {
+      padding: 0 5px 0 0;
+      } 
+      .bdate-block {
+      display: flex;
+      justify-content: space-between;
+      }
+      .birthdate select.day {
+      width: 35px;
+      }
+      .birthdate select.mounth {
+      width: calc(100% - 94px);
+      }
+      .birthdate input {
+      width: 38px;
+      vertical-align: unset;
+      }
+      .checkbox input, .children input {
+      width: auto;
+      margin: -2px 10px 0 0;
+      }
+      .checkbox a {
+      color: #8ebf42;
+      }
+      .checkbox a:hover {
+      color: #82b534;
+      }
+      button {
+        width: 200px;
+        padding: 14px 0px;
+        margin: 40px auto;
+        border-radius: 5px;
+        border: none;
+        background: #8ebf42;
+        font-size: 14px;
+        font-weight: 600;
+        color: #fff;
+        /* margin:auto; */
+        display:block;
+      }
+      button:hover {
+      background: #82b534;
+      cursor: pointer;
+      }
+      @media (min-width: 568px) {
+      .account-details >div, .personal-details >div {
+      width: 50%;
+      }
+      label {
+      width: 40%;
+      }
+      input {
+      width: 60%;
+      }
+      select, .children, .gender, .bdate-block {
+      width: calc(60% + 16px);
+      }
+      }
+
+      textarea {
+        width: 600px;
+        height: 300px;
+      }
+      .fl{
+        width: 33%;
+        float:left;
+        margin-top:20px;
+      }
+      .wrapper {
+          text-align: center;
+      }
+
+      .button {
+          position: absolute;
+          top: 50%;
+      }
+      .btnclr{
+        background-color: #42a0a0a6 !important;
+      }
+      .flex-container {
+          display: flex;
+      }
+
+.flex-child {
+    flex: 1;
+}  
+
+.flex-child:first-child {
+    margin-right: 20px;
+} 
+    </style>
+        <script language="JavaScript">
+
+          function resetFrom(){
+            document.getElementById("textAreaHTMLCode").value=""; 
+
+            document.getElementById("link1").value =""; 
+            document.getElementById("link2").value =""; 
+            document.getElementById("link3").value =""; 
+            document.getElementById("link4").value =""; 
+            document.getElementById("link5").value =""; 
+            document.getElementById("link6").value =""; 
+            document.getElementById("link7").value =""; 
+            document.getElementById("link8").value =""; 
+            document.getElementById("link9").value =""; 
+            document.getElementById("link10").value =""; 
+            document.getElementById("link11").value =""; 
+            document.getElementById("link12").value =""; 
+            document.getElementById("link13").value =""; 
+            document.getElementById("link14").value =""; 
+            document.getElementById("link15").value =""; 
+            document.getElementById("link16").value =""; 
+
+            document.getElementById("llink1").value =""; 
+            document.getElementById("llink2").value =""; 
+            document.getElementById("llink3").value =""; 
+            document.getElementById("llink4").value =""; 
+            document.getElementById("llink5").value =""; 
+            document.getElementById("llink6").value =""; 
+            document.getElementById("llink7").value =""; 
+            document.getElementById("llink8").value =""; 
+            document.getElementById("llink9").value =""; 
+            document.getElementById("llink10").value =""; 
+            document.getElementById("llink11").value =""; 
+            document.getElementById("llink12").value =""; 
+            document.getElementById("llink13").value =""; 
+            document.getElementById("llink14").value =""; 
+            document.getElementById("llink15").value =""; 
+            document.getElementById("llink16").value =""; 
+
+            document.getElementById("ldes1").value =""; 
+            document.getElementById("ldes2").value =""; 
+            document.getElementById("ldes3").value =""; 
+            document.getElementById("ldes4").value =""; 
+            document.getElementById("ldes5").value =""; 
+            document.getElementById("ldes6").value =""; 
+            document.getElementById("ldes7").value =""; 
+            document.getElementById("ldes8").value =""; 
+            document.getElementById("ldes9").value =""; 
+            document.getElementById("ldes10").value =""; 
+            document.getElementById("ldes11").value =""; 
+            document.getElementById("ldes12").value =""; 
+            document.getElementById("ldes13").value =""; 
+            document.getElementById("ldes14").value =""; 
+            document.getElementById("ldes15").value =""; 
+            document.getElementById("ldes16").value =""; 
+
+
+          }
+          function testVariable() {
+              var textAreaHTMLCode = document.getElementById("textAreaHTMLCode").value;
+              var link1 = document.getElementById("link1").value; 
+              var link2 = document.getElementById("link2").value; 
+              var link3 = document.getElementById("link3").value; 
+              var link4 = document.getElementById("link4").value; 
+              var link5 = document.getElementById("link5").value; 
+              var link6 = document.getElementById("link6").value; 
+              var link7 = document.getElementById("link7").value; 
+              var link8 = document.getElementById("link8").value; 
+              var link9 = document.getElementById("link9").value; 
+              var link10 = document.getElementById("link10").value; 
+              var link11 = document.getElementById("link11").value; 
+              var link12 = document.getElementById("link12").value; 
+              var link13 = document.getElementById("link13").value; 
+              var link14 = document.getElementById("link14").value; 
+              var link15 = document.getElementById("link15").value; 
+              var link16 = document.getElementById("link16").value; 
+
+
+              var lclink1 = document.getElementById("llink1").value; 
+              var lclink2 = document.getElementById("llink2").value; 
+              var lclink3 = document.getElementById("llink3").value; 
+              var lclink4 = document.getElementById("llink4").value; 
+              var lclink5 = document.getElementById("llink5").value; 
+              var lclink6 = document.getElementById("llink6").value; 
+              var lclink7 = document.getElementById("llink7").value; 
+              var lclink8 = document.getElementById("llink8").value; 
+              var lclink9 = document.getElementById("llink9").value; 
+              var lclink10 = document.getElementById("llink10").value; 
+              var lclink11 = document.getElementById("llink11").value; 
+              var lclink12 = document.getElementById("llink12").value; 
+              var lclink13 = document.getElementById("llink13").value; 
+              var lclink14 = document.getElementById("llink14").value; 
+              var lclink15 = document.getElementById("llink15").value; 
+              var lclink16 = document.getElementById("llink16").value; 
+
+
+              var lcdes1 = document.getElementById("ldes1").value; 
+              var lcdes2 = document.getElementById("ldes2").value; 
+              var lcdes3 = document.getElementById("ldes3").value; 
+              var lcdes4 = document.getElementById("ldes4").value; 
+              var lcdes5 = document.getElementById("ldes5").value; 
+              var lcdes6 = document.getElementById("ldes6").value; 
+              var lcdes7 = document.getElementById("ldes7").value; 
+              var lcdes8 = document.getElementById("ldes8").value; 
+              var lcdes9 = document.getElementById("ldes9").value; 
+              var lcdes10 = document.getElementById("ldes10").value; 
+              var lcdes11 = document.getElementById("ldes11").value; 
+              var lcdes12 = document.getElementById("ldes12").value; 
+              var lcdes13 = document.getElementById("ldes13").value; 
+              var lcdes14 = document.getElementById("ldes14").value; 
+              var lcdes15 = document.getElementById("ldes15").value; 
+              var lcdes16 = document.getElementById("ldes16").value; 
+
+                var temp = document.createElement('div');
+                temp.setAttribute("id", "maindiv1");
+                temp.innerHTML = textAreaHTMLCode;
+                var htmlObject = temp.innerHTML;
+                
+
+      
+
+              var parser = new DOMParser();
+              var htmlDoc = parser.parseFromString(htmlObject, 'text/html');
+
+              if(link1 || lclink1 || lcdes1){
+                if(link1){
+                  var vilink1=  htmlDoc.getElementsByClassName('ilink1'); // image url
+                  var strvilink1 = vilink1[0].outerHTML;
+                  strvilink1=strvilink1.replace(/src="(.*?)"/g, (m, $1) => 'src=' + link1);
+                  htmlDoc.getElementsByClassName('ilink1').outerHTML=strvilink1;
+                  htmlDoc.getElementsByClassName('ilink1')[0].outerHTML=strvilink1;
+                }
+
+
+              // list URL
+              if(lclink1){
+                var llink1=  htmlDoc.getElementsByClassName('llink1'); // list url
+                var strvllink1 = llink1[0].outerHTML;
+                strvllink1=strvllink1.replace(/href="(.*?)"/g, (m, $1) => 'href="' + lclink1+'"');
+                htmlDoc.getElementsByClassName('llink1').outerHTML=strvllink1;
+                htmlDoc.getElementsByClassName('llink1')[0].outerHTML=strvllink1;
+                var str2vllink1 = llink1[1].outerHTML;
+                str2vllink1=str2vllink1.replace(/href="(.*?)"/g, (m, $1) => 'href="' + lclink1+'"');
+                htmlDoc.getElementsByClassName('llink1').outerHTML=str2vllink1;
+                htmlDoc.getElementsByClassName('llink1')[1].outerHTML=str2vllink1;
+              }
+
+
+              // change description
+              if(lcdes1){
+                var ldes1=  htmlDoc.getElementsByClassName('desc1');
+                var strvdec1 = ldes1[0].outerHTML;
+                strvdec1=strvdec1.replace(/(\>.+\<)/g, `>${lcdes1}<`);
+                htmlDoc.getElementsByClassName('desc1')[0].outerHTML=strvdec1;
+              }
+
+              }
+
+            
+              if(link2 || lclink2 || lcdes2){
+                if(link2){
+                  var vilink2=  htmlDoc.getElementsByClassName('ilink2'); // image url
+                  var strvilink2 = vilink2[0].outerHTML;
+                  strvilink2=strvilink2.replace(/src="(.*?)"/g, (m, $1) => 'src=' + link2);
+                  htmlDoc.getElementsByClassName('ilink2').outerHTML=strvilink2;
+                  htmlDoc.getElementsByClassName('ilink2')[0].outerHTML=strvilink2;
+                }
+
+
+              // list URL
+              if(lclink2){
+                var llink2=  htmlDoc.getElementsByClassName('llink2'); // list url
+                var strvllink2 = llink2[0].outerHTML;
+                strvllink2=strvllink2.replace(/href="(.*?)"/g, (m, $1) => 'href="' + lclink2+'"');
+                htmlDoc.getElementsByClassName('llink2').outerHTML=strvllink2;
+                htmlDoc.getElementsByClassName('llink2')[0].outerHTML=strvllink2;
+                  var str2vllink2 = llink2[1].outerHTML;
+                  str2vllink2=str2vllink2.replace(/href="(.*?)"/g, (m, $1) => 'href="' + lclink2+'"');
+                  htmlDoc.getElementsByClassName('llink2').outerHTML=str2vllink2;
+                  htmlDoc.getElementsByClassName('llink2')[1].outerHTML=str2vllink2;
+               
+              }
+
+
+              // change description
+              if(lcdes2){
+                var ldes2=  htmlDoc.getElementsByClassName('desc2');
+                var strvdec2 = ldes2[0].outerHTML;
+                strvdec2=strvdec2.replace(/(\>.+\<)/g,`>${lcdes2}<`);
+                htmlDoc.getElementsByClassName('desc2')[0].outerHTML=strvdec2;
+              }
+
+            }
+ 
+            
+            if(link3 || lclink3 || lcdes3){
+                if(link3){
+                  var vilink3=  htmlDoc.getElementsByClassName('ilink3'); // image url
+                  var strvilink3 = vilink3[0].outerHTML;
+                  strvilink3=strvilink3.replace(/src="(.*?)"/g, (m, $1) => 'src=' + link3);
+                  htmlDoc.getElementsByClassName('ilink3').outerHTML=strvilink3;
+                  htmlDoc.getElementsByClassName('ilink3')[0].outerHTML=strvilink3;
+                }
+
+
+              // list URL
+              if(lclink3){
+                var llink3=  htmlDoc.getElementsByClassName('llink3'); // list url
+                var strvllink3 = llink3[0].outerHTML;
+                strvllink3=strvllink3.replace(/href="(.*?)"/g, (m, $1) => 'href="' + lclink3+'"');
+                htmlDoc.getElementsByClassName('llink3').outerHTML=strvllink3;
+                htmlDoc.getElementsByClassName('llink3')[0].outerHTML=strvllink3;
+                  var str3vllink3 = llink3[1].outerHTML;
+                  str3vllink3=str3vllink3.replace(/href="(.*?)"/g, (m, $1) => 'href="' + lclink3+'"');
+                  htmlDoc.getElementsByClassName('llink3').outerHTML=str3vllink3;
+                  htmlDoc.getElementsByClassName('llink3')[1].outerHTML=str3vllink3;
+               
+              }
+
+
+              // change description
+              if(lcdes3){
+                var ldes3=  htmlDoc.getElementsByClassName('desc3');
+                var strvdec3 = ldes3[0].outerHTML;
+                strvdec3=strvdec3.replace(/(\>.+\<)/g,`>${lcdes3}<`);
+                htmlDoc.getElementsByClassName('desc3')[0].outerHTML=strvdec3;
+              }
+
+            }
+ 
+            if(link4 || lclink4 || lcdes4){
+                if(link4){
+                  var vilink4=  htmlDoc.getElementsByClassName('ilink4'); // image url
+                  var strvilink4 = vilink4[0].outerHTML;
+                  strvilink4=strvilink4.replace(/src="(.*?)"/g, (m, $1) => 'src=' + link4);
+                  htmlDoc.getElementsByClassName('ilink4').outerHTML=strvilink4;
+                  htmlDoc.getElementsByClassName('ilink4')[0].outerHTML=strvilink4;
+                }
+
+
+              // list URL
+              if(lclink4){
+                var llink4=  htmlDoc.getElementsByClassName('llink4'); // list url
+                var strvllink4 = llink4[0].outerHTML;
+                strvllink4=strvllink4.replace(/href="(.*?)"/g, (m, $1) => 'href="' + lclink4+'"');
+                htmlDoc.getElementsByClassName('llink4').outerHTML=strvllink4;
+                htmlDoc.getElementsByClassName('llink4')[0].outerHTML=strvllink4;
+                  var str4vllink4 = llink4[1].outerHTML;
+                  str4vllink4=str4vllink4.replace(/href="(.*?)"/g, (m, $1) => 'href="' + lclink4+'"');
+                  htmlDoc.getElementsByClassName('llink4').outerHTML=str4vllink4;
+                  htmlDoc.getElementsByClassName('llink4')[1].outerHTML=str4vllink4;
+               
+              }
+
+
+              // change description
+              if(lcdes4){
+                var ldes4=  htmlDoc.getElementsByClassName('desc4');
+                var strvdec4 = ldes4[0].outerHTML;
+                strvdec4=strvdec4.replace(/(\>.+\<)/g,`>${lcdes4}<`);
+                htmlDoc.getElementsByClassName('desc4')[0].outerHTML=strvdec4;
+              }
+
+            }
+ 
+            
+            if(link5 || lclink5 || lcdes5){
+                if(link5){
+                  var vilink5=  htmlDoc.getElementsByClassName('ilink5'); // image url
+                  var strvilink5 = vilink5[0].outerHTML;
+                  strvilink5=strvilink5.replace(/src="(.*?)"/g, (m, $1) => 'src=' + link5);
+                  htmlDoc.getElementsByClassName('ilink5').outerHTML=strvilink5;
+                  htmlDoc.getElementsByClassName('ilink5')[0].outerHTML=strvilink5;
+                }
+
+
+              // list URL
+              if(lclink5){
+                var llink5=  htmlDoc.getElementsByClassName('llink5'); // list url
+                var strvllink5 = llink5[0].outerHTML;
+                strvllink5=strvllink5.replace(/href="(.*?)"/g, (m, $1) => 'href="' + lclink5+'"');
+                htmlDoc.getElementsByClassName('llink5').outerHTML=strvllink5;
+                htmlDoc.getElementsByClassName('llink5')[0].outerHTML=strvllink5;
+                  var str5vllink5 = llink5[1].outerHTML;
+                  str5vllink5=str5vllink5.replace(/href="(.*?)"/g, (m, $1) => 'href="' + lclink5+'"');
+                  htmlDoc.getElementsByClassName('llink5').outerHTML=str5vllink5;
+                  htmlDoc.getElementsByClassName('llink5')[1].outerHTML=str5vllink5;
+               
+              }
+
+
+              // change description
+              if(lcdes5){
+                var ldes5=  htmlDoc.getElementsByClassName('desc5');
+                var strvdec5 = ldes5[0].outerHTML;
+                strvdec5=strvdec5.replace(/(\>.+\<)/g,`>${lcdes5}<`);
+                htmlDoc.getElementsByClassName('desc5')[0].outerHTML=strvdec5;
+              }
+
+            }
+ 
+            if(link6 || lclink6 || lcdes6){
+                if(link6){
+                  var vilink6=  htmlDoc.getElementsByClassName('ilink6'); // image url
+                  var strvilink6 = vilink6[0].outerHTML;
+                  strvilink6=strvilink6.replace(/src="(.*?)"/g, (m, $1) => 'src=' + link6);
+                  htmlDoc.getElementsByClassName('ilink6').outerHTML=strvilink6;
+                  htmlDoc.getElementsByClassName('ilink6')[0].outerHTML=strvilink6;
+                }
+
+
+              // list URL
+              if(lclink6){
+                var llink6=  htmlDoc.getElementsByClassName('llink6'); // list url
+                var strvllink6 = llink6[0].outerHTML;
+                strvllink6=strvllink6.replace(/href="(.*?)"/g, (m, $1) => 'href="' + lclink6+'"');
+                htmlDoc.getElementsByClassName('llink6').outerHTML=strvllink6;
+                htmlDoc.getElementsByClassName('llink6')[0].outerHTML=strvllink6;
+                  var str6vllink6 = llink6[1].outerHTML;
+                  str6vllink6=str6vllink6.replace(/href="(.*?)"/g, (m, $1) => 'href="' + lclink6+'"');
+                  htmlDoc.getElementsByClassName('llink6').outerHTML=str6vllink6;
+                  htmlDoc.getElementsByClassName('llink6')[1].outerHTML=str6vllink6;
+               
+              }
+
+
+              // change description
+              if(lcdes6){
+                var ldes6=  htmlDoc.getElementsByClassName('desc6');
+                var strvdec6 = ldes6[0].outerHTML;
+                strvdec6=strvdec6.replace(/(\>.+\<)/g,`>${lcdes6}<`);
+                htmlDoc.getElementsByClassName('desc6')[0].outerHTML=strvdec6;
+              }
+
+            }
+ 
+           
+            if(link7 || lclink7 || lcdes7){
+                if(link7){
+                  var vilink7=  htmlDoc.getElementsByClassName('ilink7'); // image url
+                  var strvilink7 = vilink7[0].outerHTML;
+                  strvilink7=strvilink7.replace(/src="(.*?)"/g, (m, $1) => 'src=' + link7);
+                  htmlDoc.getElementsByClassName('ilink7').outerHTML=strvilink7;
+                  htmlDoc.getElementsByClassName('ilink7')[0].outerHTML=strvilink7;
+                }
+
+
+              // list URL
+              if(lclink7){
+                var llink7=  htmlDoc.getElementsByClassName('llink7'); // list url
+                var strvllink7 = llink7[0].outerHTML;
+                strvllink7=strvllink7.replace(/href="(.*?)"/g, (m, $1) => 'href="' + lclink7+'"');
+                htmlDoc.getElementsByClassName('llink7').outerHTML=strvllink7;
+                htmlDoc.getElementsByClassName('llink7')[0].outerHTML=strvllink7;
+                  var str7vllink7 = llink7[1].outerHTML;
+                  str7vllink7=str7vllink7.replace(/href="(.*?)"/g, (m, $1) => 'href="' + lclink7+'"');
+                  htmlDoc.getElementsByClassName('llink7').outerHTML=str7vllink7;
+                  htmlDoc.getElementsByClassName('llink7')[1].outerHTML=str7vllink7;
+               
+              }
+
+
+              // change description
+              if(lcdes7){
+                var ldes7=  htmlDoc.getElementsByClassName('desc7');
+                var strvdec7 = ldes7[0].outerHTML;
+                strvdec7=strvdec7.replace(/(\>.+\<)/g,`>${lcdes7}<`);
+                htmlDoc.getElementsByClassName('desc7')[0].outerHTML=strvdec7;
+              }
+
+            }
+ 
+            
+            if(link8 || lclink8 || lcdes8){
+                if(link8){
+                  var vilink8=  htmlDoc.getElementsByClassName('ilink8'); // image url
+                  var strvilink8 = vilink8[0].outerHTML;
+                  strvilink8=strvilink8.replace(/src="(.*?)"/g, (m, $1) => 'src=' + link8);
+                  htmlDoc.getElementsByClassName('ilink8').outerHTML=strvilink8;
+                  htmlDoc.getElementsByClassName('ilink8')[0].outerHTML=strvilink8;
+                }
+
+
+              // list URL
+              if(lclink8){
+                var llink8=  htmlDoc.getElementsByClassName('llink8'); // list url
+                var strvllink8 = llink8[0].outerHTML;
+                strvllink8=strvllink8.replace(/href="(.*?)"/g, (m, $1) => 'href="' + lclink8+'"');
+                htmlDoc.getElementsByClassName('llink8').outerHTML=strvllink8;
+                htmlDoc.getElementsByClassName('llink8')[0].outerHTML=strvllink8;
+                  var str8vllink8 = llink8[1].outerHTML;
+                  str8vllink8=str8vllink8.replace(/href="(.*?)"/g, (m, $1) => 'href="' + lclink8+'"');
+                  htmlDoc.getElementsByClassName('llink8').outerHTML=str8vllink8;
+                  htmlDoc.getElementsByClassName('llink8')[1].outerHTML=str8vllink8;
+               
+              }
+
+
+              // change description
+              if(lcdes8){
+                var ldes8=  htmlDoc.getElementsByClassName('desc8');
+                var strvdec8 = ldes8[0].outerHTML;
+                strvdec8=strvdec8.replace(/(\>.+\<)/g,`>${lcdes8}<`);
+                htmlDoc.getElementsByClassName('desc8')[0].outerHTML=strvdec8;
+              }
+
+            }
+ 
+            
+            if(link9 || lclink9 || lcdes9){
+                if(link9){
+                  var vilink9=  htmlDoc.getElementsByClassName('ilink9'); // image url
+                  var strvilink9 = vilink9[0].outerHTML;
+                  strvilink9=strvilink9.replace(/src="(.*?)"/g, (m, $1) => 'src=' + link9);
+                  htmlDoc.getElementsByClassName('ilink9').outerHTML=strvilink9;
+                  htmlDoc.getElementsByClassName('ilink9')[0].outerHTML=strvilink9;
+                }
+
+
+              // list URL
+              if(lclink9){
+                var llink9=  htmlDoc.getElementsByClassName('llink9'); // list url
+                var strvllink9 = llink9[0].outerHTML;
+                strvllink9=strvllink9.replace(/href="(.*?)"/g, (m, $1) => 'href="' + lclink9+'"');
+                htmlDoc.getElementsByClassName('llink9').outerHTML=strvllink9;
+                htmlDoc.getElementsByClassName('llink9')[0].outerHTML=strvllink9;
+                  var str9vllink9 = llink9[1].outerHTML;
+                  str9vllink9=str9vllink9.replace(/href="(.*?)"/g, (m, $1) => 'href="' + lclink9+'"');
+                  htmlDoc.getElementsByClassName('llink9').outerHTML=str9vllink9;
+                  htmlDoc.getElementsByClassName('llink9')[1].outerHTML=str9vllink9;
+               
+              }
+
+
+              // change description
+              if(lcdes9){
+                var ldes9=  htmlDoc.getElementsByClassName('desc9');
+                var strvdec9 = ldes9[0].outerHTML;
+                strvdec9=strvdec9.replace(/(\>.+\<)/g,`>${lcdes9}<`);
+                htmlDoc.getElementsByClassName('desc9')[0].outerHTML=strvdec9;
+              }
+
+            }
+ 
+            
+            if(link10 || lclink10 || lcdes10){
+                if(link10){
+                  var vilink10=  htmlDoc.getElementsByClassName('ilink10'); // image url
+                  var strvilink10 = vilink10[0].outerHTML;
+                  strvilink10=strvilink10.replace(/src="(.*?)"/g, (m, $1) => 'src=' + link10);
+                  htmlDoc.getElementsByClassName('ilink10').outerHTML=strvilink10;
+                  htmlDoc.getElementsByClassName('ilink10')[0].outerHTML=strvilink10;
+                }
+
+
+              // list URL
+              if(lclink10){
+                var llink10=  htmlDoc.getElementsByClassName('llink10'); // list url
+                var strvllink10 = llink10[0].outerHTML;
+                strvllink10=strvllink10.replace(/href="(.*?)"/g, (m, $1) => 'href="' + lclink10+'"');
+                htmlDoc.getElementsByClassName('llink10').outerHTML=strvllink10;
+                htmlDoc.getElementsByClassName('llink10')[0].outerHTML=strvllink10;
+                  var str10vllink10 = llink10[1].outerHTML;
+                  str10vllink10=str10vllink10.replace(/href="(.*?)"/g, (m, $1) => 'href="' + lclink10+'"');
+                  htmlDoc.getElementsByClassName('llink10').outerHTML=str10vllink10;
+                  htmlDoc.getElementsByClassName('llink10')[1].outerHTML=str10vllink10;
+               
+              }
+
+
+              // change description
+              if(lcdes10){
+                var ldes10=  htmlDoc.getElementsByClassName('desc10');
+                var strvdec10 = ldes10[0].outerHTML;
+                strvdec10=strvdec10.replace(/(\>.+\<)/g,`>${lcdes10}<`);
+                htmlDoc.getElementsByClassName('desc10')[0].outerHTML=strvdec10;
+              }
+
+            }
+ 
+
+            
+            if(link11 || lclink11 || lcdes11){
+                if(link11){
+                  var vilink11=  htmlDoc.getElementsByClassName('ilink11'); // image url
+                  var strvilink11 = vilink11[0].outerHTML;
+                  strvilink11=strvilink11.replace(/src="(.*?)"/g, (m, $1) => 'src=' + link11);
+                  htmlDoc.getElementsByClassName('ilink11').outerHTML=strvilink11;
+                  htmlDoc.getElementsByClassName('ilink11')[0].outerHTML=strvilink11;
+                }
+
+
+              // list URL
+              if(lclink11){
+                var llink11=  htmlDoc.getElementsByClassName('llink11'); // list url
+                var strvllink11 = llink11[0].outerHTML;
+                strvllink11=strvllink11.replace(/href="(.*?)"/g, (m, $1) => 'href="' + lclink11+'"');
+                htmlDoc.getElementsByClassName('llink11').outerHTML=strvllink11;
+                htmlDoc.getElementsByClassName('llink11')[0].outerHTML=strvllink11;
+                  var str11vllink11 = llink11[1].outerHTML;
+                  str11vllink11=str11vllink11.replace(/href="(.*?)"/g, (m, $1) => 'href="' + lclink11+'"');
+                  htmlDoc.getElementsByClassName('llink11').outerHTML=str11vllink11;
+                  htmlDoc.getElementsByClassName('llink11')[1].outerHTML=str11vllink11;
+               
+              }
+
+
+              // change description
+              if(lcdes11){
+                var ldes11=  htmlDoc.getElementsByClassName('desc11');
+                var strvdec11 = ldes11[0].outerHTML;
+                strvdec11=strvdec11.replace(/(\>.+\<)/g,`>${lcdes11}<`);
+                htmlDoc.getElementsByClassName('desc11')[0].outerHTML=strvdec11;
+              }
+
+            }
+ 
+            
+            if(link12 || lclink12 || lcdes12){
+                if(link12){
+                  var vilink12=  htmlDoc.getElementsByClassName('ilink12'); // image url
+                  var strvilink12 = vilink12[0].outerHTML;
+                  strvilink12=strvilink12.replace(/src="(.*?)"/g, (m, $1) => 'src=' + link12);
+                  htmlDoc.getElementsByClassName('ilink12').outerHTML=strvilink12;
+                  htmlDoc.getElementsByClassName('ilink12')[0].outerHTML=strvilink12;
+                }
+
+
+              // list URL
+              if(lclink12){
+                var llink12=  htmlDoc.getElementsByClassName('llink12'); // list url
+                var strvllink12 = llink12[0].outerHTML;
+                strvllink12=strvllink12.replace(/href="(.*?)"/g, (m, $1) => 'href="' + lclink12+'"');
+                htmlDoc.getElementsByClassName('llink12').outerHTML=strvllink12;
+                htmlDoc.getElementsByClassName('llink12')[0].outerHTML=strvllink12;
+                  var str12vllink12 = llink12[1].outerHTML;
+                  str12vllink12=str12vllink12.replace(/href="(.*?)"/g, (m, $1) => 'href="' + lclink12+'"');
+                  htmlDoc.getElementsByClassName('llink12').outerHTML=str12vllink12;
+                  htmlDoc.getElementsByClassName('llink12')[1].outerHTML=str12vllink12;
+               
+              }
+
+
+              // change description
+              if(lcdes12){
+                var ldes12=  htmlDoc.getElementsByClassName('desc12');
+                var strvdec12 = ldes12[0].outerHTML;
+                strvdec12=strvdec12.replace(/(\>.+\<)/g,`>${lcdes12}<`);
+                htmlDoc.getElementsByClassName('desc12')[0].outerHTML=strvdec12;
+              }
+
+            }
+ 
+            
+            if(link13 || lclink13 || lcdes13){
+                if(link13){
+                  var vilink13=  htmlDoc.getElementsByClassName('ilink13'); // image url
+                  var strvilink13 = vilink13[0].outerHTML;
+                  strvilink13=strvilink13.replace(/src="(.*?)"/g, (m, $1) => 'src=' + link13);
+                  htmlDoc.getElementsByClassName('ilink13').outerHTML=strvilink13;
+                  htmlDoc.getElementsByClassName('ilink13')[0].outerHTML=strvilink13;
+                }
+
+
+              // list URL
+              if(lclink13){
+                var llink13=  htmlDoc.getElementsByClassName('llink13'); // list url
+                var strvllink13 = llink13[0].outerHTML;
+                strvllink13=strvllink13.replace(/href="(.*?)"/g, (m, $1) => 'href="' + lclink13+'"');
+                htmlDoc.getElementsByClassName('llink13').outerHTML=strvllink13;
+                htmlDoc.getElementsByClassName('llink13')[0].outerHTML=strvllink13;
+                  var str13vllink13 = llink13[1].outerHTML;
+                  str13vllink13=str13vllink13.replace(/href="(.*?)"/g, (m, $1) => 'href="' + lclink13+'"');
+                  htmlDoc.getElementsByClassName('llink13').outerHTML=str13vllink13;
+                  htmlDoc.getElementsByClassName('llink13')[1].outerHTML=str13vllink13;
+               
+              }
+
+
+              // change description
+              if(lcdes13){
+                var ldes13=  htmlDoc.getElementsByClassName('desc13');
+                var strvdec13 = ldes13[0].outerHTML;
+                strvdec13=strvdec13.replace(/(\>.+\<)/g,`>${lcdes13}<`);
+                htmlDoc.getElementsByClassName('desc13')[0].outerHTML=strvdec13;
+              }
+
+            }
+ 
+            
+            if(link14 || lclink14 || lcdes14){
+                if(link14){
+                  var vilink14=  htmlDoc.getElementsByClassName('ilink14'); // image url
+                  var strvilink14 = vilink14[0].outerHTML;
+                  strvilink14=strvilink14.replace(/src="(.*?)"/g, (m, $1) => 'src=' + link14);
+                  htmlDoc.getElementsByClassName('ilink14').outerHTML=strvilink14;
+                  htmlDoc.getElementsByClassName('ilink14')[0].outerHTML=strvilink14;
+                }
+
+
+              // list URL
+              if(lclink14){
+                var llink14=  htmlDoc.getElementsByClassName('llink14'); // list url
+                var strvllink14 = llink14[0].outerHTML;
+                strvllink14=strvllink14.replace(/href="(.*?)"/g, (m, $1) => 'href="' + lclink14+'"');
+                htmlDoc.getElementsByClassName('llink14').outerHTML=strvllink14;
+                htmlDoc.getElementsByClassName('llink14')[0].outerHTML=strvllink14;
+                  var str14vllink14 = llink14[1].outerHTML;
+                  str14vllink14=str14vllink14.replace(/href="(.*?)"/g, (m, $1) => 'href="' + lclink14+'"');
+                  htmlDoc.getElementsByClassName('llink14').outerHTML=str14vllink14;
+                  htmlDoc.getElementsByClassName('llink14')[1].outerHTML=str14vllink14;
+               
+              }
+
+
+              // change description
+              if(lcdes14){
+                var ldes14=  htmlDoc.getElementsByClassName('desc14');
+                var strvdec14 = ldes14[0].outerHTML;
+                strvdec14=strvdec14.replace(/(\>.+\<)/g,`>${lcdes14}<`);
+                htmlDoc.getElementsByClassName('desc14')[0].outerHTML=strvdec14;
+              }
+
+            }
+ 
+            if(link15 || lclink15 || lcdes15){
+                if(link15){
+                  var vilink15=  htmlDoc.getElementsByClassName('ilink15'); // image url
+                  var strvilink15 = vilink15[0].outerHTML;
+                  strvilink15=strvilink15.replace(/src="(.*?)"/g, (m, $1) => 'src=' + link15);
+                  htmlDoc.getElementsByClassName('ilink15').outerHTML=strvilink15;
+                  htmlDoc.getElementsByClassName('ilink15')[0].outerHTML=strvilink15;
+                }
+
+
+              // list URL
+              if(lclink15){
+                var llink15=  htmlDoc.getElementsByClassName('llink15'); // list url
+                var strvllink15 = llink15[0].outerHTML;
+                strvllink15=strvllink15.replace(/href="(.*?)"/g, (m, $1) => 'href="' + lclink15+'"');
+                htmlDoc.getElementsByClassName('llink15').outerHTML=strvllink15;
+                htmlDoc.getElementsByClassName('llink15')[0].outerHTML=strvllink15;
+                  var str15vllink15 = llink15[1].outerHTML;
+                  str15vllink15=str15vllink15.replace(/href="(.*?)"/g, (m, $1) => 'href="' + lclink15+'"');
+                  htmlDoc.getElementsByClassName('llink15').outerHTML=str15vllink15;
+                  htmlDoc.getElementsByClassName('llink15')[1].outerHTML=str15vllink15;
+               
+              }
+
+
+              // change description
+              if(lcdes15){
+                var ldes15=  htmlDoc.getElementsByClassName('desc15');
+                var strvdec15 = ldes15[0].outerHTML;
+                strvdec15=strvdec15.replace(/(\>.+\<)/g,`>${lcdes15}<`);
+                htmlDoc.getElementsByClassName('desc15')[0].outerHTML=strvdec15;
+              }
+
+            }
+ 
+            
+            if(link16 || lclink16 || lcdes16){
+                if(link16){
+                  var vilink16=  htmlDoc.getElementsByClassName('ilink16'); // image url
+                  var strvilink16 = vilink16[0].outerHTML;
+                  strvilink16=strvilink16.replace(/src="(.*?)"/g, (m, $1) => 'src=' + link16);
+                  htmlDoc.getElementsByClassName('ilink16').outerHTML=strvilink16;
+                  htmlDoc.getElementsByClassName('ilink16')[0].outerHTML=strvilink16;
+                }
+
+
+              // list URL
+              if(lclink16){
+                var llink16=  htmlDoc.getElementsByClassName('llink16'); // list url
+                var strvllink16 = llink16[0].outerHTML;
+                strvllink16=strvllink16.replace(/href="(.*?)"/g, (m, $1) => 'href="' + lclink16+'"');
+                htmlDoc.getElementsByClassName('llink16').outerHTML=strvllink16;
+                htmlDoc.getElementsByClassName('llink16')[0].outerHTML=strvllink16;
+                  var str16vllink16 = llink16[1].outerHTML;
+                  str16vllink16=str16vllink16.replace(/href="(.*?)"/g, (m, $1) => 'href="' + lclink16+'"');
+                  htmlDoc.getElementsByClassName('llink16').outerHTML=str16vllink16;
+                  htmlDoc.getElementsByClassName('llink16')[1].outerHTML=str16vllink16;
+               
+              }
+
+
+              // change description
+              if(lcdes16){
+                var ldes16=  htmlDoc.getElementsByClassName('desc16');
+                var strvdec16 = ldes16[0].outerHTML;
+                strvdec16=strvdec16.replace(/(\>.+\<)/g,`>${lcdes16}<`);
+                htmlDoc.getElementsByClassName('desc16')[0].outerHTML=strvdec16;
+              }
+
+            }
+ 
+
+
+              var body = htmlDoc.body.innerHTML; // final 
+              document.getElementById("textAreaHTMLCodeOutput").value=body; 
+
+              resetFrom();
+              // console.log(body)
+
+
+          }
+      </script>
+  </head>
+  <body>
+    <div class="main-block">
+      <section>
+       
+      <h1>Ebay Template Convertor</h1>
+      <fieldset>
+        <legend>
+          <h3>Template</h3>
+        </legend>
+        <div  class="account-details">
+
+          <div class="flex-container">
+
+            <div class="flex-child magenta">
+              <textarea id="textAreaHTMLCode" placeholder="Enter Template Code."></textarea>
+            </div>
+            
+            <div class="flex-child green">
+              <textarea id="textAreaHTMLCodeOutput" placeholder="Output Code."></textarea>
+            </div>
+            
+          </div>
+
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>
+          <h3>LINKS</h3>
+        </legend>
+
+        <div class="row">
+          <div class="fl"><label>Image URL1</label><input type="text" id="link1"></div>
+          <div class="fl"><label>List Link</label><input type="text" id="llink1"></div>
+          <div class="fl"><label>Description</label><input type="text" id="ldes1"></div>
+
+          <div class="fl"><label>Image URL2</label><input type="text" id="link2"></div>
+          <div class="fl"><label>List Link</label><input type="text" id="llink2"></div>
+          <div class="fl"><label>Description</label><input type="text" id="ldes2"></div>
+
+          <div class="fl"><label>Image URL3</label><input type="text" id="link3"></div>
+          <div class="fl"><label>List Link</label><input type="text" id="llink3"></div>
+          <div class="fl"><label>Description</label><input type="text" id="ldes3"></div>
+
+          <div class="fl"><label>Image URL4</label><input type="text" id="link4"></div>
+          <div class="fl"><label>List Link</label><input type="text" id="llink4"></div>
+          <div class="fl"><label>Description</label><input type="text" id="ldes4"></div>
+
+          <div class="fl"><label>Image URL5</label><input type="text" id="link5"></div>
+          <div class="fl"><label>List Link</label><input type="text" id="llink5"></div>
+          <div class="fl"><label>Description</label><input type="text" id="ldes5"></div>
+
+          <div class="fl"><label>Image URL6</label><input type="text" id="link6"></div>
+          <div class="fl"><label>List Link</label><input type="text" id="llink6"></div>
+          <div class="fl"><label>Description</label><input type="text" id="ldes6"></div>
+
+          <div class="fl"><label>Image URL7</label><input type="text" id="link7"></div>
+          <div class="fl"><label>List Link</label><input type="text" id="llink7"></div>
+          <div class="fl"><label>Description</label><input type="text" id="ldes7"></div>
+
+          <div class="fl"><label>Image URL8</label><input type="text" id="link8"></div>
+          <div class="fl"><label>List Link</label><input type="text" id="llink8"></div>
+          <div class="fl"><label>Description</label><input type="text" id="ldes8"></div>
+
+          <div class="fl"><label>Image URL9</label><input type="text" id="link9"></div>
+          <div class="fl"><label>List Link</label><input type="text" id="llink9"></div>
+          <div class="fl"><label>Description</label><input type="text" id="ldes9"></div>
+
+          <div class="fl"><label>Image URL10</label><input type="text" id="link10"></div>
+          <div class="fl"><label>List Link</label><input type="text" id="llink10"></div>
+          <div class="fl"><label>Description</label><input type="text" id="ldes10"></div>
+
+          <div class="fl"><label>Image URL11</label><input type="text" id="link11"></div>
+          <div class="fl"><label>List Link</label><input type="text" id="llink11"></div>
+          <div class="fl"><label>Description</label><input type="text" id="ldes11"></div>
+
+          <div class="fl"><label>Image URL12</label><input type="text" id="link12"></div>
+          <div class="fl"><label>List Link</label><input type="text" id="llink12"></div>
+          <div class="fl"><label>Description</label><input type="text" id="ldes12"></div>
+
+          <div class="fl"><label>Image URL13</label><input type="text" id="link13"></div>
+          <div class="fl"><label>List Link</label><input type="text" id="llink13"></div>
+          <div class="fl"><label>Description</label><input type="text" id="ldes13"></div>
+
+          <div class="fl"><label>Image URL14</label><input type="text" id="link14"></div>
+          <div class="fl"><label>List Link</label><input type="text" id="llink14"></div>
+          <div class="fl"><label>Description</label><input type="text" id="ldes14"></div>
+
+          <div class="fl"><label>Image URL15</label><input type="text" id="link15"></div>
+          <div class="fl"><label>List Link</label><input type="text" id="llink15"></div>
+          <div class="fl"><label>Description</label><input type="text" id="ldes15"></div>
+
+          <div class="fl"><label>Image URL16</label><input type="text" id="link16"></div>
+          <div class="fl"><label>List Link</label><input type="text" id="llink16"></div>
+          <div class="fl"><label>Description</label><input type="text" id="ldes16"></div>
+
+
+        </div>
+          <div  class="personal-details">
+        
+        
+        </div>
+      </fieldset>
+      <div class="row">
+        <button onclick="testVariable()">Submit</button>
+        <button class="btnclr"onclick="resetFrom()">Reset</button>
+
+      </div>
+       
+    </section>
+    <br>
+    <span id="spanResult">
+    </div> 
+    <!-- <script src="main.js"></script> -->
+  </body>
+</html>
